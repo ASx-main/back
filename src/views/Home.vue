@@ -1,112 +1,63 @@
 <template>
-  <div class="home">
-    {{ preloader }}
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld :msg="message" @msg-updated="onChangeMessage" />
-    <button type="button" @click="changeMessage">change Message</button>
-    viewportW: {{ viewportW }} {{ viewportWidthInPx }} {{ allCups }}
-
-    <div v-if="isDesktop" class="desktop">desktop</div>
-    <div v-else class="mobile">mobile</div>
-
-    <button type="button" @click="changeUserName">changeUserName</button>
-    <button type="button" @click="getData">getData</button>
-    {{ bar.foo && bar.foo.s }}
-    <li v-for="user in users" :key="user.id">{{ user.name }}</li>
-    <li v-for="post in posts" :key="post.id">{{ post }}</li>
+  <div>
+    <div v-for="product in products" :key="product.id">
+      <span @click="edit(product.id, 'name')">{{ product.name }}</span>
+      :
+      <span @click="edit(product.id, 'price')">{{ product.price }}</span>
+    </div>
+    <div v-if="isEdit">
+      <input v-model="productNewValue" type="text">
+      <button @click="updateProduct">Обновить</button>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  },
   data () {
     return {
-      message: 'Привет Vue!',
-      viewportW: 0,
-      cup: 2,
-      guest: 3,
-      arr: [
-        1,
-        2
-      ],
-      users: [],
-      posts: [],
-      preloader: false,
-      bar: {
-        d: 'test'
-      }
+      products: [],
+      productKey: '',
+      productId: '',
+      productNewValue: '',
+      isEdit: false
     }
   },
-  computed: {
-    viewportWidthInPx (oldV, newV) {
-      console.log(oldV, newV)
-      return `${this.viewportW}px`
-    },
-    isDesktop () {
-      return this.viewportW > 800
-    },
-
-    allCups () {
-      return this.cup * this.guest
-    }
-  },
-  created () {
-    this.getData()
-  },
-  mounted () {
-    this.$nextTick(() => {
-      console.log('1')
-    })
-    console.log('2')
-
-    this.onResize()
-
-    window.addEventListener('resize', this.onResize)
-  },
-  beforeDestroy () {
-    console.log('destroy')
-
-    window.removeEventListener('resize', this.onResize)
+  async created () {
+    await this.getData()
   },
   methods: {
     async getData () {
-      this.preloader = true
-
-      Promise.all([
-        fetch('/static/users.json')
-          .then(response => response.json()),
-        fetch('https://jsonplaceholder.typicode.com/users')
-          .then(response => response.json())
-      ]).then(([posts, users]) => {
-        this.posts = posts
-        this.users = users
-        this.preloader = false
-      })
+      try {
+        const res = await axios.get('/products')
+        this.products = res.data
+      } catch (e) {
+        console.error(e)
+      }
     },
 
-    changeUserName () {
-      this.users[0].name = 'John Dou'
-    },
+    async updateProduct () {
+      try {
+        await axios.put(`/products/${this.productId}`, {
+          ...this.products.find(product => product.id === this.productId),
+          [this.productKey]: this.productNewValue
+        })
 
-    changeMessage (ev) {
-      console.log(ev)
-      this.message = `${this.message} - ${this.message};`
+        await this.getData()
+      } catch (e) {
+        console.error(e)
+      } finally {
+        this.isEdit = false
+        this.productNewValue = ''
+      }
     },
-
-    onChangeMessage (data) {
-      this.message = data
-    },
-
-    onResize () {
-      this.viewportW = document.documentElement.clientWidth
-      console.log(this.arr)
+    edit (id, key) {
+      this.isEdit = true
+      this.productId = id
+      this.productKey = key
     }
   }
 }
