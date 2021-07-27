@@ -1,65 +1,67 @@
-[
-  {
-    "id": 1,
-    "name": "Beeline",
-    "website": "beeline.com",
-    "status": "Требуется оценка",
-    "tasks": [
-      {"id": "1", "nameTasks": "Доделать footer", "time":  "40", "statusTasks": "Не завершено", "date": "15.08.2021"},
-      {"id": "2", "nameTasks": "Архитектура приложения", "time":  "10", "statusTasks": "Завершено", "date": "10.07.2021"},
-      {"id": "3", "nameTasks": "Выровнять сайд-бар", "time":  "8", "statusTasks": "Не Завершено", "date": "17.08.2021"},
-      {"id": "4", "nameTasks": "Оптимизировать навигацию", "time":  "19", "statusTasks": "Завершено", "date": "27.07.2021"},
-      {"id": "4", "nameTasks": "Изменить поля ввода в анкете", "time":  "14", "statusTasks": "Завершено", "date": "24.06.2021"}
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Howell",
-    "website": "hildegard.org",
-    "status": "Выполянется оценка",
-    "tasks": [
-      {"id": "1", "nameTasks": "Переделать header", "time":  "28", "statusTasks": "Завершено", "date": "13.06.2021"},
-      {"id": "2", "nameTasks": "Править верстку", "time":  "10", "statusTasks": "Не завершено", "date": "10.08.2021"},
-      {"id": "3", "nameTasks": "Правка авторизации", "time":  "36", "statusTasks": "Не Завершено", "date": "01.09.2021"},
-      {"id": "4", "nameTasks": "Изменить интерфейс корзины", "time":  "30", "statusTasks": "Завершено", "date": "19.07.2021"}
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Bauch",
-    "website": "ramiro.info",
-    "status": "Требуется оценка",
-    "tasks": [
-      {"id": "1", "nameTasks": "Изменить данные о пользователях", "time":  "20", "statusTasks": "Завершено", "date": "15.05.2021"},
-      {"id": "2", "nameTasks": "Добавить видео-уроки", "time":  "10", "statusTasks": "Завершено", "date": "10.04.2021"},
-      {"id": "3", "nameTasks": "Заменить логотипы", "time":  "4", "statusTasks": "Завершено", "date": "17.04.2021"},
+{
+  "some": [
+    {
+      "id": 1,
+      "name": "Beeline",
+      "website": "beeline.com",
+      "status": "Требуется оценка",
+      "tasks": [
+        {"id": "1", "nameTasks": "Доделать footer", "time":  "40", "statusTasks": "Не завершено", "date": "15.08.2021"},
+        {"id": "2", "nameTasks": "Архитектура приложения", "time":  "10", "statusTasks": "Завершено", "date": "10.07.2021"},
+        {"id": "3", "nameTasks": "Выровнять сайд-бар", "time":  "8", "statusTasks": "Не Завершено", "date": "17.08.2021"},
+        {"id": "4", "nameTasks": "Оптимизировать навигацию", "time":  "19", "statusTasks": "Завершено", "date": "27.07.2021"},
+        {"id": "4", "nameTasks": "Изменить поля ввода в анкете", "time":  "14", "statusTasks": "Завершено", "date": "24.06.2021"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Howell",
+      "website": "hildegard.org",
+      "status": "Выполянется оценка",
+      "tasks": [
+        {"id": "1", "nameTasks": "Переделать header", "time":  "28", "statusTasks": "Завершено", "date": "13.06.2021"},
+        {"id": "2", "nameTasks": "Править верстку", "time":  "10", "statusTasks": "Не завершено", "date": "10.08.2021"},
+        {"id": "3", "nameTasks": "Правка авторизации", "time":  "36", "statusTasks": "Не Завершено", "date": "01.09.2021"},
+        {"id": "4", "nameTasks": "Изменить интерфейс корзины", "time":  "30", "statusTasks": "Завершено", "date": "19.07.2021"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bauch",
+      "website": "ramiro.info",
+      "status": "Требуется оценка",
+      "tasks": [
+        {"id": "1", "nameTasks": "Изменить данные о пользователях", "time":  "20", "statusTasks": "Завершено", "date": "15.05.2021"},
+        {"id": "2", "nameTasks": "Добавить видео-уроки", "time":  "10", "statusTasks": "Завершено", "date": "10.04.2021"},
+        {"id": "3", "nameTasks": "Заменить логотипы", "time":  "4", "statusTasks": "Завершено", "date": "17.04.2021"},
 
 
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Lebsack",
-    "website": "kale.biz",
-    "status": "Оценка завершена",
-    "tasks": [
-      {"id": "1", "nameTasks": "Правка заявки на доставку", "time":  "22", "statusTasks": "Не завершено", "date": "11.03.2021"},
-      {"id": "2", "nameTasks": "Заменить ссылки", "time":  "6", "statusTasks": "Завершено", "date": "16.02.2021"},
-      {"id": "3", "nameTasks": "Настроить анимации", "time":  "30", "statusTasks": "Завершено", "date": "17.03.2021"},
-      {"id": "4", "nameTasks": "Добавить карты", "time":  "18", "statusTasks": "Завершено", "date": "19.03.2021"}
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Dietrich",
-    "website": "demarco.info",
-    "status": "Требуется оценка",
-    "tasks": [
-      {"id": "1", "nameTasks": "Изменить инфомарцию о копмании", "time":  "4", "statusTasks": "Не завершено", "date": "02.08.2021"},
-      {"id": "2", "nameTasks": "Настроить рассылку писем", "time":  "40", "statusTasks": "Не завершено", "date": "10.10.2021"},
-      {"id": "3", "nameTasks": "Правка верстки на мобилках", "time":  "38", "statusTasks": "Не Завершено", "date": "17.08.2021"},
-      {"id": "4", "nameTasks": "Настроить личные кабинеты", "time":  "26", "statusTasks": "Завершено", "date": "24.07.2021"},
-      {"id": "2", "nameTasks": "Править верстку", "time":  "10", "statusTasks": "Не завершено", "date": "10.08.2021"}
-    ]
-  }
-]
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Lebsack",
+      "website": "kale.biz",
+      "status": "Оценка завершена",
+      "tasks": [
+        {"id": "1", "nameTasks": "Правка заявки на доставку", "time":  "22", "statusTasks": "Не завершено", "date": "11.03.2021"},
+        {"id": "2", "nameTasks": "Заменить ссылки", "time":  "6", "statusTasks": "Завершено", "date": "16.02.2021"},
+        {"id": "3", "nameTasks": "Настроить анимации", "time":  "30", "statusTasks": "Завершено", "date": "17.03.2021"},
+        {"id": "4", "nameTasks": "Добавить карты", "time":  "18", "statusTasks": "Завершено", "date": "19.03.2021"}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dietrich",
+      "website": "demarco.info",
+      "status": "Требуется оценка",
+      "tasks": [
+        {"id": "1", "nameTasks": "Изменить инфомарцию о копмании", "time":  "4", "statusTasks": "Не завершено", "date": "02.08.2021"},
+        {"id": "2", "nameTasks": "Настроить рассылку писем", "time":  "40", "statusTasks": "Не завершено", "date": "10.10.2021"},
+        {"id": "3", "nameTasks": "Правка верстки на мобилках", "time":  "38", "statusTasks": "Не Завершено", "date": "17.08.2021"},
+        {"id": "4", "nameTasks": "Настроить личные кабинеты", "time":  "26", "statusTasks": "Завершено", "date": "24.07.2021"},
+        {"id": "2", "nameTasks": "Править верстку", "time":  "10", "statusTasks": "Не завершено", "date": "10.08.2021"}
+      ]
+    }
+  ]
+}

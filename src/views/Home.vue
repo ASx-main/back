@@ -35,7 +35,11 @@ export default {
     }
   },
   async created () {
-    await this.getData()
+    // await this.getData()
+
+    const res = await axios.get('https://mockend.com/ASx-main/back/somes/')
+
+    console.log(res)
   },
   computed: {
     getProducts () {
