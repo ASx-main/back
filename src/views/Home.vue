@@ -7,10 +7,9 @@
       @filter="filter"
       @update="update"
     />
-
     <div v-if="isEdit">
-      <input v-model="productNewValue" type="text">
-      <button @click="updateProduct">Обновить</button>
+      <input class="input" v-model="productNewValue" type="text">
+      <button class="btn-add" @click="updateProduct">Обновить</button>
     </div>
   </div>
 </template>
@@ -24,22 +23,18 @@ export default {
   components: { Table },
   data () {
     return {
+      isEdit: false,
       products: [],
       productsHeaders: [],
       key: '',
       productId: '',
+      direction: '',
       productNewValue: '',
-      isEdit: false,
-      search: '',
-      direction: ''
+      search: ''
     }
   },
   async created () {
-    // await this.getData()
-
-    const res = await axios.get('https://mockend.com/ASx-main/back/somes/')
-
-    console.log(res)
+    await this.getData()
   },
   computed: {
     getProducts () {
@@ -85,7 +80,6 @@ export default {
         console.error(e)
       }
     },
-
     async updateProduct () {
       try {
         await axios.put(`/products/${this.productId}`, {
@@ -123,3 +117,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.input {
+  margin: 10px;
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btn-add {
+  padding: 5px;
+  background: lightsalmon;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 12%;
+}
+</style>
