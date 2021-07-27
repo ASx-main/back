@@ -1,31 +1,22 @@
-/* eslint-disable global-require */
 <template>
   <div>
     <table border="1">
       <thead>
-      <tr>
+      <tr v-if="headers.length">
         <th class="headers" v-for="header of headers" :key="header">
           {{ header }}
-          <template v-if="header !== 'person'">
-            <input type="text" @input="searching($event, header)">
-            <button @click="sorting(header)">Sort</button>
-          </template>
+          <input @input="filter($event, header)" type="text">
+          <button @click="sort(header)">Sort</button>
         </th>
       </tr>
       </thead>
+
       <tbody>
-      <template v-if="users.length > 0">
-        <tr v-for="(user, index) of users" :key="index">
-          <td v-for="(item, key) of user" :key="key">
-            <template v-if="key === 'person'">
-              <span style="margin-right: 5px;"
-                    v-for="person of item"
-                    :key="person"
-              >{{ person }}</span>
-            </template>
-            <template v-else>
-              {{ item }}
-            </template>
+      <template v-if="data.length">
+        <tr v-for="(item, index) of data" :key="index">
+          <td v-for="(value, key) of item" :key="key">
+            {{ value }}
+            <button v-if="key !== 'id'" @click="update(item.id, key)" >Change</button>
           </td>
         </tr>
       </template>
@@ -37,22 +28,26 @@
 <script>
 export default {
   props: {
-    users: {
+    headers: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    data: {
       type: Array,
       required: true
     }
   },
-  data () {
-    return {
-      headers: Object.keys(this.users[0])
-    }
-  },
   methods: {
-    searching (e, key) {
-      this.$emit('searching', e.target.value, key)
+    sort (key) {
+      this.$emit('sort', key)
     },
-    sorting (key) {
-      this.$emit('sorting', key)
+    filter (e, key) {
+      this.$emit('filter', e.target.value, key)
+    },
+    update (index, key) {
+      this.$emit('update', index, key)
     }
   }
 }

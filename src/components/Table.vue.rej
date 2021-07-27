@@ -1,0 +1,30 @@
+diff a/src/components/Table.vue b/src/components/Table.vue	(rejected hunks)
+@@ -42,2 +42,2 @@ export default {
+-      required: true,
+-    },
++      required: true
++    }
+@@ -45 +45 @@ export default {
+-  data() {
++  data () {
+@@ -47,2 +47,2 @@ export default {
+-      headers: Object.keys(this.users[0]),
+-    };
++      headers: Object.keys(this.users[0])
++    }
+@@ -51,5 +51,2 @@ export default {
+-    searching(e, key) {
+-      this.$emit('searching', e.target.value, key);
+-    },
+-    sorting(key) {
+-      this.$emit('sorting', key);
++    searching (e, key) {
++      this.$emit('searching', e.target.value, key)
+@@ -57,2 +54,5 @@ export default {
+-  },
+-};
++    sorting (key) {
++      this.$emit('sorting', key)
++    }
++  }
++}
